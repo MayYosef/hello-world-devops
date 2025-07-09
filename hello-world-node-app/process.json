@@ -1,0 +1,21 @@
+{
+  "apps": [
+    {
+      "name": "MyApp",
+      "script": "server.js",
+      "ignore_watch": [
+        "[\\/\\\\]\\./",
+        "node_modules"
+      ],
+      "out_file": "/dev/null",
+      "watch": false,
+      "exec_mode": "fork",
+      "max_restarts": 5,
+      "env": {
+        "HOME_DIR": "/usr/src",
+        "NODE_CONFIG_DIR": "/usr/src/app/config",
+        "EP_PORT": "3000"
+      }
+    }
+  ]
+}

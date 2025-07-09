@@ -1,0 +1,28 @@
+# Use Node.js LTS version as the base image
+FROM node:20-slim
+
+# Set working directory
+WORKDIR /app
+
+# Install dependencies required for component tests
+RUN apt-get update && apt-get install -y \
+  curl \
+  wget \
+  gnupg \
+  --no-install-recommends \
+  && rm -rf /var/lib/apt/lists/*
+
+# Copy package.json, package-lock.json, and other configuration files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install -g nyc mocha && \
+  npm i
+
+COPY . .
+
+# Set environment variables for testing
+ENV NODE_ENV=test
+
+# Command to run the tests
+CMD ["npm", "run", "test"]
