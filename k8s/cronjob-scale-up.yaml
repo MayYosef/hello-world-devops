@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: scale-up-hello-world
 spec:
-  schedule: "25 21 * * *"  
+  schedule: "30 21 * * *"  
   jobTemplate:
     spec:
       template:
