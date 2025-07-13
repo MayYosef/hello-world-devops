@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: scale-up-hello-world
+spec:
+  schedule: "55 9 * * *"  
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccountName: scale-jobs-sa
+          containers:
+          - name: kubectl
+            image: bitnami/kubectl:latest
+            command:
+            - /bin/sh
+            - -c
+            - kubectl scale deployment hello-world-node --replicas=5
+          restartPolicy: OnFailure
