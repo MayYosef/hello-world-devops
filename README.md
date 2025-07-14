@@ -102,8 +102,8 @@ Repository variables:
       branches:
         - main
       paths:
-        - 'hello-world-node-app/**'
- ```
+        - 'hello-world-node-app/**' ```
+  
 - For easier testing during development, the filter is commented out for now.
 
 ---
