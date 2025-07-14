@@ -5,6 +5,6 @@ metadata:
   namespace: default
 rules:
   - apiGroups: ["apps"]
-    resources: ["deployments"]
+    resources: ["deployments/scale"]
     resourceNames: ["hello-world-node"]
     verbs: ["get", "list", "update", "patch"]
