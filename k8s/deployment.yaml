@@ -29,7 +29,7 @@ spec:
               app: hello-world-node
       containers:
         - name: hello-world-node
-          image: 760370564012.dkr.ecr.us-east-1.amazonaws.com/may-hello-world-node:cbb47740507b138048d96f7348b384c602cd1dac
+          image: 760370564012.dkr.ecr.us-east-1.amazonaws.com/may-hello-world-node:370ec155f0f9c285dec0fe310ba8b01cc8809953
           ports:
             - containerPort: 3000
           resources:
